@@ -8,24 +8,20 @@
  * ------------------------------------------------------------
  */
 {
-    "type": "header",
-    "name": "Header Nafees",
-    "sections": {
-        "announcementBar": {
-            "type": "announcementBar",
-            "settings": {
-                
-            }
-        },
-        "header" :{
-            "type": "header",
-            "settings": {
-                
-            }
-        }
+  "type": "header",
+  "name": "Header Nafees",
+  "sections": {
+    "announcementBar": {
+      "type": "announcementBar",
+      "settings": {}
     },
-    "order": [
-        "announcementBar",
-        "header"
-    ]
+    "header": {
+      "type": "header",
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcementBar",
+    "header"
+  ]
 }
