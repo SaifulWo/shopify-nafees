@@ -1,5 +1,5 @@
 <div>
-  <h1>Announcement Bar</h1>
+  <h1>{{section.settings.announcementID}}</h1>
 </div>
 
 
@@ -7,6 +7,13 @@
   {
     "name": "Announcement Bar Name",
     "class": "announcement class",
-    "settings": []
+    "settings": [
+      {
+        "type": "text",
+        "id": "announcementID",
+        "label": "Announcement Level",
+        "default":"Announcement Bar Text"
+      },
+    ]
   }
 {% endschema %}
