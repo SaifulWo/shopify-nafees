@@ -14,7 +14,9 @@
 
   <div class="hero-text max_width">
     <h1>{{ section.settings.headding }}</h1>
-    <p>{{ section.settings.sub }}</p>
+    {%- if section.settings.sub != blank -%}
+      <p>{{ section.settings.sub }}</p>
+    {%- endif -%}
     <a href="{{section.settings.herourl}}">
       <button>Shop Now</button>
     </a>
