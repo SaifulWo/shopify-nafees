@@ -1,9 +1,69 @@
+{%- style -%}
+  .max_width {
+    max-width: {{ section.settings.renselect }}%;
+  }
+{%- endstyle -%}
+
 <div class="image-banner-{{section.id}}">
-    Image Banner tested Test
+  <img
+    src="{{ section.settings.image  |  image_url}}"
+    alt=""
+    width="100%"
+    height=""
+    loading="lazy">
+
+  <div class="hero-text max_width">
+    <h1>{{ section.settings.headding }}</h1>
+    <p>{{ section.settings.sub }}</p>
+    <a href="{{section.settings.herourl}}">
+      <button>Shop Now</button>
+    </a>
+  </div>
 </div>
-{% schema  %} 
-{
+
+
+{% schema %}
+  {
     "name": "Image Banner",
-    "settings": []
-}
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Hero Image Select"
+      },
+      {
+        "type": "header",
+        "content": "Banner Section Group"
+      },
+
+      {
+        "type": "text",
+        "id": "headding",
+        "label": "Headding Text",
+        "default": "Headding Text"
+      },
+
+      {
+        "type": "richtext",
+        "id": "sub",
+        "label": "Sub Headding Text",
+        "default": "<p>Sub Headding Text</p>"
+      }, {
+        "type": "url",
+        "id": "herourl",
+        "label": "Button URL"
+      }, {
+        "type": "range",
+        "id": "renselect",
+        "label": "Width Select",
+        "min": 50,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "default": 60
+      }
+
+
+    ]
+  }
 {% endschema %}

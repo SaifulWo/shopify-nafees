@@ -1,3 +1,15 @@
 html{
     margin: 0;
 }
+
+/* hero image css */
+
+.image-banner-template--20048592306414__image_banner {
+    position: relative;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}
