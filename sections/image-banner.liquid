@@ -23,7 +23,7 @@
       <p>{{ section.settings.sub }}</p>
     {%- endif -%}
     <a href="{{section.settings.herourl}}">
-      <button>Shop Now</button>
+      <button>{{ section.settings.button_text }}</button>
     </a>
   </div>
 </div>
@@ -59,7 +59,16 @@
         "type": "url",
         "id": "herourl",
         "label": "Button URL"
-      }, {
+      }, 
+      
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Buy Now"
+      },
+      
+      {
         "type": "range",
         "id": "renselect",
         "label": "Width Select",
