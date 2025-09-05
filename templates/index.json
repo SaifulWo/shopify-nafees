@@ -8,20 +8,13 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "settings": {
-        "image": "shopify://shop_images/shopping-and-advertisement-concept-excited-man-buyer-pointing-fingers-sideways-showing-two-choices-products-left-and-right-banners-standing-over-light-blue-background-photo.jpg",
-        "headding": "Headding Text Headding TextHeadding",
-        "sub": "<p>Sub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding TextSub Headding Text</p>",
-        "herourl": "shopify://collections",
-        "button_text": "Shop Now",
-        "renselect": 60
-      }
-    }
-  },
-  "order": [
-    "image_banner"
-  ]
+    "sections": {
+        "image_banner": {
+            "type": "image-banner",
+            "settings": {}
+        }
+    },
+    "order":[
+        "image_banner"
+    ]
 }

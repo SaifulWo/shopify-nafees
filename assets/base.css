@@ -13,3 +13,8 @@ html{
     top: 50%;
     left: 10%;
 }
+
+img, svg {
+    vertical-align: middle;
+    width: 100%;
+}

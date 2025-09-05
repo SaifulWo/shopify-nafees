@@ -1,0 +1,78 @@
+<div class="container text-center">
+  <div class="row">
+    <div>
+      <h4>{{ section.settings.heading }}</h4>
+    </div>
+    {%- if section.settings.sub_heading != blank -%}
+      <div>
+        <p>{{ section.settings.sub_heading }}</p>
+      </div>
+    {%- endif -%}
+    {%- assign collections = section.settings.collection.products -%}
+    {% for product in collections %}
+      <div class="col-3 card">
+        <div>
+          {{ product.featured_image | image_url: width: 300 | image_tag }}
+        </div>
+        <div>
+          <p>Title: {{ product.title }}</p>
+        </div>
+        <div>
+          <p>Price: {{ product.price | money }}</p>
+        </div>
+        <div>
+          <a href="{{product.url}}">View More</a>
+        </div>
+      </div>
+
+    {%- else -%}
+      {% for item in (1..8) %}
+        <div class="col-3 card">
+          {%- capture current -%}
+              {%- cycle 1, 2, 3, 4 -%}
+            {%- endcapture -%}
+          <div>
+            {{ "product-apparel-" | append: current | placeholder_svg_tag }}
+          </div>
+          <div>
+            <p>Title: {{ forloop.index }}</p>
+          </div>
+          <div>
+            <p>Price: $24</p>
+          </div>
+          <div>
+            <a href="#">View More</a>
+          </div>
+        </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "This Is Heading"
+      }, {
+        "type": "richtext",
+        "id": "sub_heading",
+        "label": "Sub Heading"
+      }, {
+        "type": "collection",
+        "id": "collection",
+        "label": "Select Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Feture Collections",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}
