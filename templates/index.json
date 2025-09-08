@@ -8,13 +8,19 @@
  * ------------------------------------------------------------
  */
 {
-    "sections": {
-        "image_banner": {
-            "type": "image-banner",
-            "settings": {}
-        }
-    },
-    "order":[
-        "image_banner"
-    ]
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/shopping-and-advertisement-concept-excited-man-buyer-pointing-fingers-sideways-showing-two-choices-products-left-and-right-banners-standing-over-light-blue-background-photo.jpg",
+        "headding": "Headding Text",
+        "sub": "<p>Sub Headding Text</p>",
+        "herourl": "",
+        "renselect": 60
+      }
+    }
+  },
+  "order": [
+    "image_banner"
+  ]
 }
