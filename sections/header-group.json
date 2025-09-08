@@ -13,11 +13,15 @@
   "sections": {
     "announcementBar": {
       "type": "announcementBar",
-      "settings": {}
+      "settings": {
+        "announcementID": "Announcement Bar Text"
+      }
     },
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "menu_id": "main-menu"
+      }
     }
   },
   "order": [
