@@ -18,9 +18,19 @@
         "herourl": "",
         "renselect": 60
       }
+    },
+    "feture_collection_K6yiti": {
+      "type": "feture-collection",
+      "name": "Feture Collections",
+      "settings": {
+        "heading": "This Is Heading",
+        "sub_heading": "",
+        "collection": ""
+      }
     }
   },
   "order": [
-    "image_banner"
+    "image_banner",
+    "feture_collection_K6yiti"
   ]
 }
