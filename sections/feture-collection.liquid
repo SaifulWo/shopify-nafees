@@ -26,6 +26,7 @@
       </div>
 
     {%- else -%}
+      {%- assign product_title = "Title 01, Title 02, Title 03, Title 04, Title 05, Title 06, Title 07, Title 08" | split: "," -%}
       {% for item in (1..8) %}
         <div class="col-3 card">
           {%- capture current -%}
@@ -35,7 +36,7 @@
             {{ "product-apparel-" | append: current | placeholder_svg_tag }}
           </div>
           <div>
-            <p>Title: {{ forloop.index }}</p>
+            <p>Title: {{ product_title[forloop.index0] }}</p>
           </div>
           <div>
             <p>Price: $24</p>
@@ -71,7 +72,8 @@
     "presets": [
       {
         "name": "Feture Collections",
-        "settings": {}
+        "settings": {},
+        "category": "Collection"
       }
     ]
   }

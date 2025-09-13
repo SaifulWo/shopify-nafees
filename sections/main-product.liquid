@@ -1,0 +1,118 @@
+<div class="container product-template-{{ section.id }}">
+  <div class="row">
+    <div class="col-6">
+      {% for image in product.images %}
+        {{ image.src | image_url: width: 500 | image_tag }}
+      {% endfor %}
+
+    </div>
+    <div class="col-6">
+      {% form 'product'
+        , product %}
+        <input
+          type="hidden"
+          name="id"
+          min="1"
+          value="{{ product.selected_or_first_available_variant.id }}">
+        {{ form | payment_terms }}
+
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when "@app" %}
+              {% render block %}
+
+            {% when "vendor" %}
+              {{ block.settings.text }}
+
+            {% when "sku" %}
+              <h1>{{ product.sku }}</h1>
+
+            {% when "title" %}
+              <h1>{{ product.title }}</h1>
+
+            {% when "price" %}
+              <h3>{{ product.price | money_with_currency }}</h3>
+            {% when "quantity" %}
+              <input
+                type="number"
+                min="1"
+                name="quantity"
+                value="1">
+
+            {% when "buy_now_button" %}
+              <div class="mt-2">
+                <button type="submit" class="btn btn-primary">Add To Cart</button>
+                <br>
+                {% if block.settings.buy_now %}
+                  {{ form | payment_button }}
+                {% endif %}
+
+              </div>
+
+
+            {% when "description" %}
+              <p>{{ product.description }}</p>
+
+              {% else %}
+
+          {% endcase %}
+        {% endfor %}
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Product Template Parent",
+    "class": "product-templage-nafees",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "@app"
+      },
+      {
+        "type": "vendor",
+        "name": "Text Add",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Vendor Add",
+            "default": "{{ product.vendor }}"
+          }
+        ]
+      },
+      {
+        "type": "sku",
+        "name": "SKU"
+      },
+      {
+        "type": "title",
+        "name": "Title"
+      }, {
+        "type": "price",
+        "name": "Price"
+      }, {
+        "type": "quantity",
+        "name": "Quantity"
+      }, {
+        "type": "buy_now_button",
+        "name": "Buy Now",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "buy_now",
+            "label": "Buy Now",
+            "default": true
+          }
+        ]
+
+      }, {
+        "type": "description",
+        "name": "Description"
+      }
+    ]
+  }
+{% endschema %}

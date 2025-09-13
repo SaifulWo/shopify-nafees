@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {},
+      "blocks": {
+        "ventor_title": {
+          "type": "vendor",
+          "settings": {
+            "text": "{{ product.vendor }}"
+          }
+        },
+        "product_sku": {
+          "type": "sku",
+          "settings": {}
+        },
+        "product_title": {
+          "type": "title",
+          "settings": {}
+        },
+        "product_price": {
+          "type": "price",
+          "settings": {}
+        },
+        "product_quantity": {
+          "type": "quantity",
+          "settings": {}
+        },
+        "product_buy_now": {
+          "type": "buy_now_button",
+          "settings": {
+            "buy_now": true
+          }
+        },
+
+        "product_description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "ventor_title",
+        "product_sku",
+        "product_title",
+        "product_price",
+        "product_quantity",
+        "product_buy_now",
+        "product_description"
+      ]
+    }
+  },
+  "order": ["main"]
+}
